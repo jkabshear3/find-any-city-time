@@ -39,7 +39,7 @@ req.headers({
 });
 
 req.form({
-	"apiKey": {key: "AIzaSyBgSdZMnZoKLkycPtc25x6JpWQVjZQ0tA8"}
+	"apiKey": {key: "myAPIkey"}
 });
 
 console.log("REQ", "RES")

@@ -1,3 +1,70 @@
+html {
+	height: 100%;
+	width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	background: url('./global.jpg');
+	background-size: cover;
+}
+
+
 .App {
-	text-align: center;
+	margin-bottom: 55%;
+	border: 1px solid black;
+	border-radius: 30px;
+	box-shadow: 4px 3px 3px;
+	padding: 80px 125px 45px 125px;
+
+
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.textBox[type=text] {
+	border-radius: 15%;
+	outline: none;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Courier";
+  font-variant: small-caps;
+  text-align: center;
+}
+
+::-webkit-input-placeholder {
+	font-weight: bold;
+	font-style: italic;
+}
+
+.button {
+	border: 0px;
+	border-radius: 20%;
+	box-shadow: 3px 2px 2px;
+	padding: 20px 30px;
+	background-color: #2B4970;
+	outline: none;
+}
+
+.button:hover {
+	background-color: #143054;
+	cursor: pointer;
+}
+
+.timer {
+	
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import moment from 'moment-timezone'
+import './Clock.css'
 
 
 class Clock extends React.Component {
@@ -22,7 +23,7 @@ class Clock extends React.Component {
     render() {
         const { time } = this.state; // retrieve the time from state
 
-        return (<div>
+        return (<div className='container'>
             
             <h2>
                 {''}

@@ -59,9 +59,9 @@ class App extends React.Component {
 
 //------------------------------------------------EVENT FUNCTIONS------------------------------------------------
 
-  onClick2 = () => {
+  /*onClick2 = () => {    <-----------------   click function test 
     console.log("p")
-  }
+  }*/
 
   onTextChange = (event) => {
     this.setState({city: event.target.value})
@@ -98,14 +98,14 @@ class App extends React.Component {
     return (
       
       <div className="App">
-        <input type="button" value="Press Me" onClick={() => this.onClick(this.state.city)}/>
-        <input type="button" value="state" onClick={this.onClick2}/>
-        <input type="text" onChange={this.onTextChange}/>
+      <Clock className='timer' time={this.state.timeZone}/>
+        <input className='textBox' placeholder='enter any city..'type="text" onChange={this.onTextChange}/>
+        <input className='button' type="button" value="Press Me" onClick={() => this.onClick(this.state.city)}/>
         <h1>{this.state.chosenCity}</h1>
         <select onChange={this.onChosenCity}>
             {cityAndState}
         </select>
-        <Clock time={this.state.timeZone}/>
+        
       </div>
     );
   }
