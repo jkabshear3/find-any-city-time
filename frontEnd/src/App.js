@@ -41,7 +41,8 @@ class App extends React.Component {
         .then(data => {
           if (data.length === 0) {
             this.setState({
-              chosenCity: 'No such city...'
+              chosenCity: 'No such city...',
+              isLoading: false
             })
           }
           else {
@@ -92,6 +93,12 @@ class App extends React.Component {
     console.log('switching')
   }
 
+  onKey = (event) => {
+    if (event.key === "Enter") {
+      this.onClick()
+    }
+  }
+
 //----------------------------------------------RENDER FUNCTION-------------------------------------------------- 
 
   render() {
@@ -106,7 +113,7 @@ class App extends React.Component {
         <img style={{background: 'transparent'}} src={require('./loadGlobe.gif')} /> :
         <h1 className="city">{this.state.chosenCity}</h1>
       } 
-        <input className='textBox' placeholder='enter any city..'type="text" onChange={this.onTextChange}/>
+        <input className='textBox' placeholder='enter any city..'type="text" onKeyPress={this.onKey}onChange={this.onTextChange}/>
         <input className='button' type="button" value="Get Time" onClick={() => this.onClick(this.state.city)}/>
         <select className="dropDown" onChange={this.onChosenCity}>
             {cityAndState}
