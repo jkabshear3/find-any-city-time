@@ -1,6 +1,11 @@
-html {
+
+
+body {
 	height: 100%;
 	width: 100%;
+	background: url('./global.jpg') no-repeat center center fixed;
+	background-size: cover;
+	margin: 0px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -9,36 +14,28 @@ html {
   }
 }
 
-body {
-	height: 100%;
-	width: 100%;
-	background: url('./global.jpg');
-	background-size: cover;
-}
 
 
 .App {
-	margin-bottom: 55%;
+	
 	border: 1px solid black;
 	border-radius: 30px;
 	box-shadow: 4px 3px 3px;
 	padding: 80px 125px 45px 125px;
-
-
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	margin-top: 90px;
+	background-color: rgba(50, 230, 255, .3);
+	text-align: center;
 }
 
 .textBox[type=text] {
+	text-align: center;
 	border-radius: 15%;
 	outline: none;
-  width: 100%;
+  width: 90%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
+  box-shadow: 3px 2px 2px;
   font-size: 20px;
   font-weight: bold;
   font-family: "Courier";
@@ -49,11 +46,17 @@ body {
 ::-webkit-input-placeholder {
 	font-weight: bold;
 	font-style: italic;
+	text-align: center;
 }
 
 .button {
-	border: 0px;
+	margin-bottom: 12px;
+	margin-right: 5px;
+	border: none;
 	border-radius: 20%;
+	color: white;
+	font-weight: bold;
+	font-family: "Courier";
 	box-shadow: 3px 2px 2px;
 	padding: 20px 30px;
 	background-color: #2B4970;
@@ -67,4 +70,13 @@ body {
 
 .timer {
 	
+}
+
+.dropDown {
+	margin-left: 5px;
+}
+
+.city {
+	margin-top: 0px;
+	text-align: center;
 }

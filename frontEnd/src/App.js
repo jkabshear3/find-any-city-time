@@ -9,8 +9,9 @@ class App extends React.Component {
     constructor() {
       super()
       this.state = {
+        isLoading: false,
         city: '',
-        chosenCity: '',
+        chosenCity: 'Cincinnati, OH',
         timeStamp: '',
         location: {
           lat: "42.349998",
@@ -27,6 +28,7 @@ class App extends React.Component {
   
 //-------------------------------------------------MAIN FUNCTION-------------------------------------------------
   onClick = () => {
+    this.setState({isLoading: true})
       fetch("http://localhost:3030/cities", 
       {
         method: 'post',
@@ -51,7 +53,8 @@ class App extends React.Component {
                     lng: data[0].lon
                   },
                   timeZone: data[0].tz,
-                  timeStamp: new Date()
+                  timeStamp: new Date(),
+                  isLoading: false
                 })}}
 
         )
@@ -99,10 +102,13 @@ class App extends React.Component {
       
       <div className="App">
       <Clock className='timer' time={this.state.timeZone}/>
+      {this.state.isLoading ? 
+        <img style={{background: 'transparent'}} src={require('./loadGlobe.gif')} /> :
+        <h1 className="city">{this.state.chosenCity}</h1>
+      } 
         <input className='textBox' placeholder='enter any city..'type="text" onChange={this.onTextChange}/>
-        <input className='button' type="button" value="Press Me" onClick={() => this.onClick(this.state.city)}/>
-        <h1>{this.state.chosenCity}</h1>
-        <select onChange={this.onChosenCity}>
+        <input className='button' type="button" value="Get Time" onClick={() => this.onClick(this.state.city)}/>
+        <select className="dropDown" onChange={this.onChosenCity}>
             {cityAndState}
         </select>
         

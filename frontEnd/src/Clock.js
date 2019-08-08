@@ -26,8 +26,9 @@ class Clock extends React.Component {
         return (<div className='container'>
             
             <h2>
-                {''}
+                {'It is '}
                 {moment(time).tz(this.props.time).format('LTS')}
+                {" in"}
             </h2>
         </div>);
     }
