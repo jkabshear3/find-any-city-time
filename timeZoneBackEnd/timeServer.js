@@ -29,33 +29,5 @@ app.post('/cities', (req, res) => {
 })
 
 
-app.post('/map', (req, res) => {
-	var req = unirest("POST", "https://googletimezoneapidimasv1.p.rapidapi.com/getLocalTime");
-
-req.headers({
-	"x-rapidapi-host": "GoogleTimezoneAPIdimasV1.p.rapidapi.com",
-	"x-rapidapi-key": "b313d516b2msh0db0b65dbef210dp186cc8jsn3ed57421d8db",
-	"content-type": "application/x-www-form-urlencoded"
-});
-
-req.form({
-	"apiKey": {key: "myAPIkey"}
-});
-
-console.log("REQ", "RES")
-})
-
-app.post('/map', (req, res) => {
-	fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' 
-		+ req.body.lat 
-		+ ',' 
-		+ req.body.lng 
-		+ '&key=' + "AIzaSyBgSdZMnZoKLkycPtc25x6JpWQVjZQ0tA8")
-        .then(response => response.json())
-        .then(responseJson => {
-            console.log('ADDRESS GEOCODE is BACK!! => ' + JSON.stringify(responseJson));
-        res.json(responseJson)
-
-})})
 
 app.listen(3030)

@@ -9,21 +9,21 @@ class App extends React.Component {
     constructor() {
       super()
       this.state = {
-        isLoading: false,
-        city: '',
-        chosenCity: 'Cincinnati, OH',
-        timeStamp: '',
-        location: {
-          lat: "42.349998",
-          lng: "-83.059998"
-        },
-        timeZone: 'America/New_York',
-        options: [
-        {
-          name: 'City, State'
+          isLoading: false,
+          city: '',
+          chosenCity: 'Cincinnati, OH',
+          timeStamp: '',
+          location: {
+            lat: "42.349998",
+            lng: "-83.059998"
+          },
+          timeZone: 'America/New_York',
+          options: [
+            {
+              name: 'City, State'
+            }
+          ]
         }
-        ]
-      }
     }
   
 //-------------------------------------------------MAIN FUNCTION-------------------------------------------------
@@ -46,7 +46,7 @@ class App extends React.Component {
             })
           }
           else {
-          this.setState({
+            this.setState({
                   options: data,
                   chosenCity: data[0].name,
                   location: {
@@ -56,10 +56,10 @@ class App extends React.Component {
                   timeZone: data[0].tz,
                   timeStamp: new Date(),
                   isLoading: false
-                })}}
-
-        )
-    }
+            })
+          }
+        })
+  }
 
 //------------------------------------------------EVENT FUNCTIONS------------------------------------------------
 
@@ -88,10 +88,6 @@ class App extends React.Component {
         timeZone: filterArray[0].tz
       })
   } 
-
-  changeCity = (event) => {
-    console.log('switching')
-  }
 
   onKey = (event) => {
     if (event.key === "Enter") {
