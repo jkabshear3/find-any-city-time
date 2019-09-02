@@ -129,4 +129,3 @@ export default App;
 //make a loading circle when loading city
 
 //read through tutorial OR find another lat/lon-to-map API 
-
