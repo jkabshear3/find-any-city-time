@@ -130,4 +130,3 @@ export default App;
 
 //read through tutorial OR find another lat/lon-to-map API 
 
-//API KEY ----AIzaSyBgSdZMnZoKLkycPtc25x6JpWQVjZQ0tA8-------------------------
