@@ -108,12 +108,14 @@ class App extends React.Component {
       {this.state.isLoading ? 
         <img style={{background: 'transparent'}} src={require('./loadGlobe.gif')} /> :
         <h1 className="city">{this.state.chosenCity}</h1>
-      } 
+      } <label>
         <input className='textBox' placeholder='enter any city..'type="text" onKeyPress={this.onKey}onChange={this.onTextChange}/>
+        </label>
         <input className='button' type="button" value="Get Time" onClick={() => this.onClick(this.state.city)}/>
-        <select className="dropDown" onChange={this.onChosenCity}>
-            {cityAndState}
-        </select>
+       <label> <select className="dropDown" onChange={this.onChosenCity}>
+                {cityAndState}
+              </select>
+      </label>
         
       </div>
     );
